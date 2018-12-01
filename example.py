@@ -20,7 +20,7 @@ plt.figure(figsize=(6, 6))
 # read in propublica data
 propublica_data = pd.read_csv("./doc/example_notebooks/"
                               "propublica_data_for_fairml.csv")
-
+#print(propublica_data)
 # quick data processing
 compas_rating = propublica_data.score_factor.values
 propublica_data = propublica_data.drop("score_factor", 1)

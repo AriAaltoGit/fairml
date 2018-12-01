@@ -208,6 +208,9 @@ def audit_model(predict_function, input_dataframe, distance_metric="mse",
 
         # go over every column
         for col in range(number_of_features):
+            
+            print(str(col) + " / " + str(number_of_features-1))
+
             # get reference vector
             reference_vector = data[:, col]
             data_col_ptb = replace_column_of_matrix(
@@ -250,6 +253,9 @@ def audit_model(predict_function, input_dataframe, distance_metric="mse",
 
     # figure out the sign of the different features
     for cols in range(data.shape[1]):
+        
+        print("Sign: " + str(col) + " / " + str(data.shape[1]))
+
         sign = detect_feature_sign(predict_function, np.copy(data), cols)
 
         dictionary_key = list_of_column_names[cols]
